@@ -25,11 +25,7 @@ func (c *counter) count() (int64, int) {
 }
 
 func newCounter() *counter {
-    return &counter{
-        0,
-        0,
-        new(sync.Mutex),
-    }
+    return &counter{mutex:new(sync.Mutex)}
 }
 
 type readCounter struct {
