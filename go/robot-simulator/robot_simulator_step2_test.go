@@ -4,7 +4,6 @@ package robot
 
 import (
 	"testing"
-	"time"
 )
 
 // For step 1 you implemented robot movements, but it's not much of a simulation.
@@ -79,7 +78,6 @@ func TestStep2(t *testing.T) {
 			cmd <- test2[j].Command
 		}
 		close(cmd)
-		time.Sleep(20000)
 		da := <-rep
 		last := i - 1
 		want := test2[last].Step2Robot
