@@ -6,7 +6,7 @@ import (
 
 const MaxUint64 = ^uint64(0)
 
-var ErrInvalidInput = errors.New("Invalid number of inputs: must be between 1 and 64")
+var ErrInvalidInput = errors.New("Invalid input number: must be between 1 and 64")
 
 func Square(input int) (uint64, error) {
 	if input < 1 || input > 64 {
