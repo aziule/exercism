@@ -4,6 +4,8 @@ import (
 	"errors"
 )
 
+const MaxUint64 = ^uint64(0)
+
 var ErrInvalidInput = errors.New("Invalid number of inputs: must be between 1 and 64")
 
 func Square(input int) (uint64, error) {
@@ -15,5 +17,5 @@ func Square(input int) (uint64, error) {
 }
 
 func Total() uint64 {
-	return ^uint64(0)
+	return MaxUint64
 }
