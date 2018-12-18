@@ -15,10 +15,13 @@ var substances = map[int]string{
 	128: "cats",
 }
 
+// Allergies returns the list of allergies given a score
 func Allergies(score uint) []string {
 	var allergies []string
 	var keys []int
 
+	// Iterating over maps is randomised, but the expected result is sorted,
+	// so we need to sort the keys beforehand
 	for k := range substances {
 		keys = append(keys, k)
 	}
@@ -34,6 +37,7 @@ func Allergies(score uint) []string {
 	return allergies
 }
 
+// AllergicTo tells if a person is allergic to a substance given a score
 func AllergicTo(score uint, substance string) bool {
 	for k, v := range substances {
 		if v == substance {
