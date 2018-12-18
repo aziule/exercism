@@ -29,7 +29,7 @@ func Allergies(score uint) []string {
 	sort.Ints(keys)
 
 	for _, k := range keys {
-		if score&uint(k) != 0 {
+		if score&uint(k) == uint(k) {
 			allergies = append(allergies, substances[k])
 		}
 	}
@@ -41,7 +41,7 @@ func Allergies(score uint) []string {
 func AllergicTo(score uint, substance string) bool {
 	for k, v := range substances {
 		if v == substance {
-			return score&uint(k) != 0
+			return score&uint(k) == uint(k)
 		}
 	}
 
